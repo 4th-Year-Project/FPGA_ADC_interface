@@ -25,4 +25,5 @@ interface to collect data from ADC and output in a format so can be stored in me
 
 # To-do
 * Check if the address bits need looping back to 0 when it gets to 7
+* Add delay of >20ns before reading data 
 
