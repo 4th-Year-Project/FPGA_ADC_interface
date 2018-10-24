@@ -1,10 +1,10 @@
-# FPGA_ADC_interface
+﻿# FPGA_ADC_interface
 interface to collect data from ADC and output in a format so can be stored in memory
 
 # System Diagram
-![](Readme_Assests/ADC-FPGA_System_diagram.png)
+![](README_assests/ADC-FPGA_System_diagram.png)
 # State Diagram
-
+![](README_assets//ADC-FPGA_State_diagram.png)
 # Good to know
 - 3.3v IO Voltage
 - Gist of interface
