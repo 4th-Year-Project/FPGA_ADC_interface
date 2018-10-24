@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="FPGA_ADC_interface_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="FPGA_ADC_interface_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="299166666666fs"></ZoomStartTime>
+      <ZoomEndTime time="300166666667fs"></ZoomEndTime>
+      <Cursor1Time time="300000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="110"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="12" />
+   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CONVST" type="logic">
+      <obj_property name="ElementShortName">CONVST</obj_property>
+      <obj_property name="ObjectShortName">CONVST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/DB" type="array">
+      <obj_property name="ElementShortName">DB[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DB[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/EOC" type="logic">
+      <obj_property name="ElementShortName">EOC</obj_property>
+      <obj_property name="ObjectShortName">EOC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CS" type="logic">
+      <obj_property name="ElementShortName">CS</obj_property>
+      <obj_property name="ObjectShortName">CS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/RD" type="logic">
+      <obj_property name="ElementShortName">RD</obj_property>
+      <obj_property name="ObjectShortName">RD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/A" type="array">
+      <obj_property name="ElementShortName">A[2:0]</obj_property>
+      <obj_property name="ObjectShortName">A[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/DONE" type="logic">
+      <obj_property name="ElementShortName">DONE</obj_property>
+      <obj_property name="ObjectShortName">DONE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/DATA" type="array">
+      <obj_property name="ElementShortName">DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/VALID" type="logic">
+      <obj_property name="ElementShortName">VALID</obj_property>
+      <obj_property name="ObjectShortName">VALID</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CLK_2MHZ" type="logic">
+      <obj_property name="ElementShortName">CLK_2MHZ</obj_property>
+      <obj_property name="ObjectShortName">CLK_2MHZ</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/COUNTER" type="array">
+      <obj_property name="ElementShortName">COUNTER[16:0]</obj_property>
+      <obj_property name="ObjectShortName">COUNTER[16:0]</obj_property>
+   </wvobject>
+</wave_config>
