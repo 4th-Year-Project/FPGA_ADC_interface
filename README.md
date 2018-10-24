@@ -2,7 +2,7 @@
 interface to collect data from ADC and output in a format so can be stored in memory
 
 # System Diagram
-
+![](Readme_Assests/ADC-FPGA_System_diagram.png)
 # State Diagram
 
 # Good to know
