@@ -5,6 +5,8 @@ interface to collect data from ADC and output in a format so can be stored in me
 ![](README_assets/ADC-FPGA_System_diagram.png)
 # State Diagram
 ![](README_assets/ADC-DPFA_State_diagram.png)
+# Clocking Diagram
+
 # Good to know
 - 3.3v IO Voltage
 - Gist of interface
@@ -24,6 +26,7 @@ interface to collect data from ADC and output in a format so can be stored in me
 | DB7 to DB0 | Data Output Lines. They are normally held in a high impedance state. Data is driven onto the data bus when both R̅D̅ and C̅S̅ go active low. |
 
 # To-do
-* Check if the address bits need looping back to 0 when it gets to 7
+* Pin planning
+* Psuedo code
 * Add delay of >20ns before reading data 
 
