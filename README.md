@@ -6,7 +6,7 @@ interface to collect data from ADC and output in a format so can be stored in me
 # State Diagram
 ![](README_assets/ADC-DPFA_State_diagram.png)
 # Waveform
-![](README_assets/FPGA_ADC_waveform.png)
+![](README_assets/FPGA-ADC_waveform.png)
 # Good to know
 - 3.3v IO Voltage
 - Gist of interface
