@@ -31,44 +31,74 @@ module FPGA_ADC_interface(
      DATA,
      VALID,
      CLK_2MHZ,
-     RESET
+     RESET,
+     ENABLE
     );
-    
-    output CONVST, CS , RD, DONE, VALID;
-    output [2:0] A;
-    output [7:0] DATA;
-    
-    input EOC, CLK_2MHZ, RESET;
-    input [7:0]DB;
-    
-    reg CONVST;
-    wire [7:0]DB;
-    wire EOC;
-    wire CS;
-    wire RD;
-    reg [2:0]A;
-    reg DONE;
-    reg [7:0] DATA;
-    reg VALID;
-    wire CLK_2MHZ; 
-    wire RESET;
-    
-    reg [16:0]COUNTER = 0;
+
+output CONVST, CS , RD, DONE, VALID;
+output [2:0] A;
+output [7:0] DATA;
+
+input EOC, CLK_2MHZ, RESET, ENABLE;
+input [7:0]DB;
+
+reg CONVST;
+wire [7:0]DB;
+wire EOC;
+wire CS;
+wire RD;
+reg [2:0]A;
+reg DONE;
+reg [7:0] DATA;
+reg VALID;
+wire CLK_2MHZ; 
+wire RESET;
+wire ENABLE;
+
+reg [16:0]COUNTER = 0;
+parameter MAXSAMPLES = 8'd200; 
     
 assign RD = EOC; 
 assign CS = EOC;
     
-    initial begin
+initial begin
+CONVST = 1;
+A = 0;
+DONE = 0;
+COUNTER = 0;
+VALID = 0;
+end
+    
+always @(posedge CLK_2MHZ or  RESET)begin
+    if(RESET) begin
+        CONVST = 1;
+        A = 0;
+        DONE = 0;
+        COUNTER = 0;
+        VALID = 0;
+    end
+end
+    
+always @ (negedge CLK_2MHZ) begin  //Check if not finished and then start sample sequence
+    if (ENABLE && (COUNTER < MAXSAMPLES)) begin
+        CONVST = 0;
+        COUNTER = COUNTER + 1;
+        end 
+        
+    if (COUNTER == MAXSAMPLES) begin
+        DONE = 1;
+        VALID = 0;
+    end   
+end
+
+always @ (negedge EOC) begin //release CONVST 
     CONVST = 1;
-    A = 0;
-    DONE = 0;
-    COUNTER = 0;
-    VALID = 0;
-    end
-    
-    always @ (negedge RESET) begin
-    
-    end
+end
+
+always @ (posedge EOC) begin //Sample data from ADC
+    DATA = DB;
+    VALID = 1;
+end
     
     
 endmodule

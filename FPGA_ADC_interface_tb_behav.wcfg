@@ -11,22 +11,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="299166666666fs"></ZoomStartTime>
-      <ZoomEndTime time="300166666667fs"></ZoomEndTime>
-      <Cursor1Time time="300000000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="4464839706fs"></ZoomEndTime>
+      <Cursor1Time time="240000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="110"></ValueColumnWidth>
+      <ValueColumnWidth column_width="98"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="12" />
+   <WVObjectSize size="13" />
    <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CONVST" type="logic">
       <obj_property name="ElementShortName">CONVST</obj_property>
       <obj_property name="ObjectShortName">CONVST</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/DB" type="array">
-      <obj_property name="ElementShortName">DB[7:0]</obj_property>
-      <obj_property name="ObjectShortName">DB[7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/EOC" type="logic">
       <obj_property name="ElementShortName">EOC</obj_property>
@@ -39,6 +35,10 @@
    <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/RD" type="logic">
       <obj_property name="ElementShortName">RD</obj_property>
       <obj_property name="ObjectShortName">RD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/DB" type="array">
+      <obj_property name="ElementShortName">DB[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DB[7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/A" type="array">
       <obj_property name="ElementShortName">A[2:0]</obj_property>
@@ -67,5 +67,10 @@
    <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/COUNTER" type="array">
       <obj_property name="ElementShortName">COUNTER[16:0]</obj_property>
       <obj_property name="ObjectShortName">COUNTER[16:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/ENABLE" type="logic">
+      <obj_property name="ElementShortName">ENABLE</obj_property>
+      <obj_property name="ObjectShortName">ENABLE</obj_property>
    </wvobject>
 </wave_config>
