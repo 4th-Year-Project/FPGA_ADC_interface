@@ -1,7 +1,7 @@
-Running: xsim.dir/FPGA_ADC_interface_tb_behav/xsimk.exe -simmode gui -wdb FPGA_ADC_interface_tb_behav.wdb -simrunnum 0 -socket 49873
+Running: xsim.dir/FPGA_ADC_interface_tb_behav/xsimk.exe -simmode gui -wdb FPGA_ADC_interface_tb_behav.wdb -simrunnum 0 -socket 49926
 Design successfully loaded
-Design Loading Memory Usage: 4820 KB (Peak: 4820 KB)
-Design Loading CPU Usage: 15 ms
+Design Loading Memory Usage: 4808 KB (Peak: 4808 KB)
+Design Loading CPU Usage: 46 ms
 Simulation completed
-Simulation Memory Usage: 5432 KB (Peak: 5432 KB)
-Simulation CPU Usage: 46 ms
+Simulation Memory Usage: 5436 KB (Peak: 5436 KB)
+Simulation CPU Usage: 124 ms

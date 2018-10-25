@@ -83,6 +83,7 @@ always @ (negedge CLK_2MHZ) begin  //Check if not finished and then start sample
     if (ENABLE && (COUNTER < MAXSAMPLES)) begin
         CONVST = 0;
         COUNTER = COUNTER + 1;
+        A = A+1;
         end 
         
     if (COUNTER == MAXSAMPLES) begin
