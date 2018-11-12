@@ -3,6 +3,7 @@ interface to collect data from ADC and output in a format so can be stored in me
 
 # System Diagram
 ![](README_assets/ADC-FPGA_System_diagram.png)
+![](README_assets/ADC-FPGA_ADC_pins.png)
 # State Diagram
 ![](README_assets/ADC-DPFA_State_diagram.png)
 # Waveform
