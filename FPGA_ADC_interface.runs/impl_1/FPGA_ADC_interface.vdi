@@ -1,0 +1,48 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Nov 12 17:59:23 2018
+# Process ID: 1232
+# Current directory: C:/4th-year-project/FPGA_ADC_interface/FPGA_ADC_interface.runs/impl_1
+# Command line: vivado.exe -log FPGA_ADC_interface.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source FPGA_ADC_interface.tcl -notrace
+# Log file: C:/4th-year-project/FPGA_ADC_interface/FPGA_ADC_interface.runs/impl_1/FPGA_ADC_interface.vdi
+# Journal file: C:/4th-year-project/FPGA_ADC_interface/FPGA_ADC_interface.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source FPGA_ADC_interface.tcl -notrace
+Command: link_design -top FPGA_ADC_interface -part xc7a35tcpg236-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/4th-year-project/FPGA_ADC_interface/FPGA_ADC_interface.srcs/constrs_1/imports/digilent-xdc/Cmod-A7-Master.xdc]
+Finished Parsing XDC File [C:/4th-year-project/FPGA_ADC_interface/FPGA_ADC_interface.srcs/constrs_1/imports/digilent-xdc/Cmod-A7-Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 565.434 ; gain = 305.219
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net CONVST_OBUF has multiple drivers: CONVST_reg/Q, CONVST_reg__1/Q, and CONVST_reg__0/Q.
+INFO: [Project 1-461] DRC finished with 1 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 577.273 ; gain = 11.840
+INFO: [Common 17-83] Releasing license: Implementation
+12 Infos, 0 Warnings, 0 Critical Warnings and 2 Errors encountered.
+opt_design failed
+ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 12 17:59:51 2018...

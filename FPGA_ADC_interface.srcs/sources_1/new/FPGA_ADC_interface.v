@@ -61,44 +61,42 @@ parameter MAXSAMPLES = 8'd200;
 assign RD = EOC; 
 assign CS = EOC;
     
-initial begin
+/*initial begin
 CONVST = 1;
 A = 0;
 DONE = 0;
 COUNTER = 0;
 VALID = 0;
-end
-    
-always @(posedge CLK_2MHZ or  RESET)begin
-    if(RESET) begin
-        CONVST = 1;
-        A = 0;
-        DONE = 0;
-        COUNTER = 0;
-        VALID = 0;
-    end
-end
-    
+end*/
+        
 always @ (negedge CLK_2MHZ) begin  //Check if not finished and then start sample sequence
-    if (ENABLE && (COUNTER < MAXSAMPLES)) begin
-        CONVST = 0;
-        COUNTER = COUNTER + 1;
-        A = A+1;
+    if (RESET) begin
+        COUNTER = 0;
+        A <= 0;
+        CONVST = 1;
+        DONE = 0;
+        VALID = 0;
+        end
+        
+    if (ENABLE && (COUNTER < MAXSAMPLES)&& ~RESET) begin
+        COUNTER <= COUNTER + 1;
+        A <= A+1;
         end 
         
-    if (COUNTER == MAXSAMPLES) begin
-        DONE = 1;
-        VALID = 0;
+    if (COUNTER == MAXSAMPLES && ~RESET) begin
+        DONE <= 1;
+        VALID <= 0;
     end   
 end
 
 always @ (negedge EOC) begin //release CONVST 
-    CONVST = 1;
+    CONVST <= 1;
 end
 
 always @ (posedge EOC) begin //Sample data from ADC
-    DATA = DB;
-    VALID = 1;
+    DATA <= DB;
+    CONVST <= 0;
+    VALID <= 1;
 end
     
     
