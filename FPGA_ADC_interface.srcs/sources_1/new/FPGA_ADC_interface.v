@@ -18,8 +18,6 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
-
 module FPGA_ADC_interface(
      CONVST,
      DB,
@@ -27,19 +25,20 @@ module FPGA_ADC_interface(
      CS,
      RD,
      A,
-     DONE,
-     DATA,
-     VALID,
-     CLK_2MHZ,
+    // DONE,
+    // DATA,
+     //VALID,
+     SYSCLK,
      RESET,
      ENABLE
     );
 
-output CONVST, CS , RD, DONE, VALID;
+output CONVST, CS , RD;
+//output DONE, VALID;
 output [2:0] A;
-output [7:0] DATA;
+//output [7:0] DATA;
 
-input EOC, CLK_2MHZ, RESET, ENABLE;
+input EOC, SYSCLK, RESET, ENABLE;
 input [7:0]DB;
 
 reg CONVST;
@@ -51,53 +50,96 @@ reg [2:0]A;
 reg DONE;
 reg [7:0] DATA;
 reg VALID;
-wire CLK_2MHZ; 
+wire SYSCLK; 
 wire RESET;
 wire ENABLE;
 
-reg [16:0]COUNTER = 0;
+reg [16:0]COUNTER;
+reg CLK_2MHZ = 0;
+reg CLK_4MHZ = 0;
+wire CLK_8MHZ;
 parameter MAXSAMPLES = 8'd200; 
+
     
 assign RD = EOC; 
 assign CS = EOC;
-    
-/*initial begin
-CONVST = 1;
-A = 0;
-DONE = 0;
-COUNTER = 0;
-VALID = 0;
-end*/
-        
-always @ (negedge CLK_2MHZ) begin  //Check if not finished and then start sample sequence
+//------Clocking-------
+clk_wiz_0 clkgen1
+   (
+    .clk_out1(CLK_8MHZ),     // output clk_out1
+    .clk_in1(SYSCLK));      // input clk_in1
+
+always @ (posedge CLK_8MHZ) begin //Clocking
+    if(RESET) 
+        CLK_4MHZ <= 1'b0;
+    else
+        CLK_4MHZ <= !CLK_4MHZ;
+end
+
+always @ (posedge CLK_4MHZ) begin //Clocking
+    if(RESET) 
+        CLK_2MHZ <= 1'b0;
+    else
+        CLK_2MHZ <= !CLK_2MHZ;
+end
+//------Logic-------     
+always @ (negedge CLK_2MHZ or posedge RESET) begin  //Start sampling sequence
     if (RESET) begin
-        COUNTER = 0;
+        COUNTER <= 0;
         A <= 0;
-        CONVST = 1;
-        DONE = 0;
-        VALID = 0;
-        end
-        
-    if (ENABLE && (COUNTER < MAXSAMPLES)&& ~RESET) begin
-        COUNTER <= COUNTER + 1;
-        A <= A+1;
+        DONE <= 0;
+    end 
+    else begin    
+        if (ENABLE && (COUNTER < MAXSAMPLES)) begin
+            COUNTER <= COUNTER + 1;
+            A <= A+1;
         end 
-        
-    if (COUNTER == MAXSAMPLES && ~RESET) begin
-        DONE <= 1;
-        VALID <= 0;
+        if (COUNTER == MAXSAMPLES) 
+            DONE <= 1;
     end   
 end
 
-always @ (negedge EOC) begin //release CONVST 
-    CONVST <= 1;
+/*always @ (negedge EOC or negedge CLK_2MHZ)begin
+    if (RESET) begin
+        CONVST = 1;
+    end
+    else begin
+        if(DONE) begin
+            CONVST = 1;
+        end
+        else begin
+            CONVST = !CONVST;
+        end
+    end
+end */
+
+always @ (posedge CLK_4MHZ or posedge RESET)begin
+    if (RESET) begin
+    CONVST = 1;
+    end
+    else begin
+        if(DONE) begin
+            CONVST = 1;
+        end
+        else begin
+            CONVST = !CONVST;
+        end
+    end
 end
 
-always @ (posedge EOC) begin //Sample data from ADC
-    DATA <= DB;
-    CONVST <= 0;
-    VALID <= 1;
+always @ (posedge EOC or posedge DONE) begin // Valid data signal control
+    if(RESET) begin
+    DATA = 0;
+    VALID = 0;
 end
-    
-    
+    else begin
+        if (DONE)  
+        VALID = 0;   
+        else begin
+            DATA = DB;
+            VALID = 1;
+        end
+    end
+end
+
 endmodule

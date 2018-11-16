@@ -4,8 +4,10 @@
 ## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
 
 ## 12 MHz Clock Signal
-#set_property -dict { PACKAGE_PIN L17   IOSTANDARD LVCMOS33 } [get_ports { sysclk }]; #IO_L12P_T1_MRCC_14 Sch=gclk
-#create_clock -add -name sys_clk_pin -period 83.33 -waveform {0 41.66} [get_ports {sysclk}];
+
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets RD_OBUF]
+
+set_property -dict {PACKAGE_PIN L17 IOSTANDARD LVCMOS33} [get_ports SYSCLK]
 
 ## LEDs
 #set_property -dict { PACKAGE_PIN A17   IOSTANDARD LVCMOS33 } [get_ports { led[0] }]; #IO_L12N_T1_MRCC_16 Sch=led[1]
@@ -17,8 +19,8 @@
 #set_property -dict { PACKAGE_PIN C17   IOSTANDARD LVCMOS33 } [get_ports { led0_r }]; #IO_L14P_T2_SRCC_16 Sch=led0_r
 
 ## Buttons
-#set_property -dict { PACKAGE_PIN A18   IOSTANDARD LVCMOS33 } [get_ports { btn[0] }]; #IO_L19N_T3_VREF_16 Sch=btn[0]
-#set_property -dict { PACKAGE_PIN B18   IOSTANDARD LVCMOS33 } [get_ports { btn[1] }]; #IO_L19P_T3_16 Sch=btn[1]
+set_property -dict {PACKAGE_PIN A18 IOSTANDARD LVCMOS33} [get_ports RESET]
+set_property -dict {PACKAGE_PIN B18 IOSTANDARD LVCMOS33} [get_ports ENABLE]
 
 ## Pmod Header JA
 #set_property -dict { PACKAGE_PIN G17   IOSTANDARD LVCMOS33 } [get_ports { ja[0] }]; #IO_L5N_T0_D07_14 Sch=ja[1]
@@ -39,14 +41,14 @@
 
 ## GPIO Pins
 ## Pins 15 and 16 should remain commented if using them as analog inputs
-set_property -dict { PACKAGE_PIN M3    IOSTANDARD LVCMOS33 } [get_ports { DB[7]  }]; #IO_L8N_T1_AD14N_35 Sch=pio[01]
-set_property -dict { PACKAGE_PIN L3    IOSTANDARD LVCMOS33 } [get_ports { DB[6]  }]; #IO_L8P_T1_AD14P_35 Sch=pio[02]
-set_property -dict { PACKAGE_PIN A16   IOSTANDARD LVCMOS33 } [get_ports { DB[5]  }]; #IO_L12P_T1_MRCC_16 Sch=pio[03]
-set_property -dict { PACKAGE_PIN K3    IOSTANDARD LVCMOS33 } [get_ports { DB[4]  }]; #IO_L7N_T1_AD6N_35 Sch=pio[04]
-set_property -dict { PACKAGE_PIN C15   IOSTANDARD LVCMOS33 } [get_ports { DB[3]  }]; #IO_L11P_T1_SRCC_16 Sch=pio[05]
-set_property -dict { PACKAGE_PIN H1    IOSTANDARD LVCMOS33 } [get_ports { DB[2]  }]; #IO_L3P_T0_DQS_AD5P_35 Sch=pio[06]
-set_property -dict { PACKAGE_PIN A15   IOSTANDARD LVCMOS33 } [get_ports { DB[1]  }]; #IO_L6N_T0_VREF_16 Sch=pio[07]
-set_property -dict { PACKAGE_PIN B15   IOSTANDARD LVCMOS33 } [get_ports { DB[0]  }]; #IO_L11N_T1_SRCC_16 Sch=pio[08]
+set_property -dict {PACKAGE_PIN M3 IOSTANDARD LVCMOS33} [get_ports {DB[7]}]
+set_property -dict {PACKAGE_PIN L3 IOSTANDARD LVCMOS33} [get_ports {DB[6]}]
+set_property -dict {PACKAGE_PIN A16 IOSTANDARD LVCMOS33} [get_ports {DB[5]}]
+set_property -dict {PACKAGE_PIN K3 IOSTANDARD LVCMOS33} [get_ports {DB[4]}]
+set_property -dict {PACKAGE_PIN C15 IOSTANDARD LVCMOS33} [get_ports {DB[3]}]
+set_property -dict {PACKAGE_PIN H1 IOSTANDARD LVCMOS33} [get_ports {DB[2]}]
+set_property -dict {PACKAGE_PIN A15 IOSTANDARD LVCMOS33} [get_ports {DB[1]}]
+set_property -dict {PACKAGE_PIN B15 IOSTANDARD LVCMOS33} [get_ports {DB[0]}]
 #set_property -dict { PACKAGE_PIN A14   IOSTANDARD LVCMOS33 } [get_ports { pio9  }]; #IO_L6P_T0_16 Sch=pio[09]
 #set_property -dict { PACKAGE_PIN J3    IOSTANDARD LVCMOS33 } [get_ports { pio10 }]; #IO_L7P_T1_AD6P_35 Sch=pio[10]
 #set_property -dict { PACKAGE_PIN J1    IOSTANDARD LVCMOS33 } [get_ports { pio11 }]; #IO_L3N_T0_DQS_AD5N_35 Sch=pio[11]
@@ -76,13 +78,13 @@ set_property -dict { PACKAGE_PIN B15   IOSTANDARD LVCMOS33 } [get_ports { DB[0] 
 #set_property -dict { PACKAGE_PIN V5    IOSTANDARD LVCMOS33 } [get_ports { pio39 }]; #IO_L16N_T2_34 Sch=pio[39]
 #set_property -dict { PACKAGE_PIN W4    IOSTANDARD LVCMOS33 } [get_ports { pio40 }]; #IO_L12N_T1_MRCC_34 Sch=pio[40]
 #set_property -dict { PACKAGE_PIN U5    IOSTANDARD LVCMOS33 } [get_ports { pio41 }]; #IO_L16P_T2_34 Sch=pio[41]
-set_property -dict { PACKAGE_PIN U2    IOSTANDARD LVCMOS33 } [get_ports { A[2] }]; #IO_L9N_T1_DQS_34 Sch=pio[42]
-set_property -dict { PACKAGE_PIN W6    IOSTANDARD LVCMOS33 } [get_ports { A[1] }]; #IO_L13N_T2_MRCC_34 Sch=pio[43]
-set_property -dict { PACKAGE_PIN U3    IOSTANDARD LVCMOS33 } [get_ports { A[0] }]; #IO_L9P_T1_DQS_34 Sch=pio[44]
-set_property -dict { PACKAGE_PIN U7    IOSTANDARD LVCMOS33 } [get_ports { CONVST }]; #IO_L19P_T3_34 Sch=pio[45]
-set_property -dict { PACKAGE_PIN W7    IOSTANDARD LVCMOS33 } [get_ports { CS }]; #IO_L13P_T2_MRCC_34 Sch=pio[46]
-set_property -dict { PACKAGE_PIN U8    IOSTANDARD LVCMOS33 } [get_ports { RD }]; #IO_L14P_T2_SRCC_34 Sch=pio[47]
-set_property -dict { PACKAGE_PIN V8    IOSTANDARD LVCMOS33 } [get_ports { EOC }]; #IO_L14N_T2_SRCC_34 Sch=pio[48]
+set_property -dict {PACKAGE_PIN U2 IOSTANDARD LVCMOS33} [get_ports {A[2]}]
+set_property -dict {PACKAGE_PIN W6 IOSTANDARD LVCMOS33} [get_ports {A[1]}]
+set_property -dict {PACKAGE_PIN U3 IOSTANDARD LVCMOS33} [get_ports {A[0]}]
+set_property -dict {PACKAGE_PIN U7 IOSTANDARD LVCMOS33} [get_ports CONVST]
+set_property -dict {PACKAGE_PIN W7 IOSTANDARD LVCMOS33} [get_ports CS]
+set_property -dict {PACKAGE_PIN U8 IOSTANDARD LVCMOS33} [get_ports RD]
+set_property -dict {PACKAGE_PIN V8 IOSTANDARD LVCMOS33} [get_ports EOC]
 
 ## UART
 #set_property -dict { PACKAGE_PIN J18   IOSTANDARD LVCMOS33 } [get_ports { uart_rxd_out }]; #IO_L7N_T1_D10_14 Sch=uart_rxd_out
@@ -130,3 +132,12 @@ set_property -dict { PACKAGE_PIN V8    IOSTANDARD LVCMOS33 } [get_ports { EOC }]
 #set_property -dict { PACKAGE_PIN R19   IOSTANDARD LVCMOS33 } [get_ports { RamWEn     }]; #IO_L10N_T1_D15_14 Sch=sram-we
 #set_property -dict { PACKAGE_PIN N19   IOSTANDARD LVCMOS33 } [get_ports { RamCEn     }]; #IO_L9N_T1_DQS_D13_14 Sch=sram-ce
 
+create_clock -period 83.330 -name SYSCLK_pin -waveform {0.000 41.660} -add [get_ports SYSCLK]
+create_generated_clock -name CLK_4MHZ -source [get_pins clkgen1/inst/mmcm_adv_inst/CLKOUT0] -divide_by 2 -add -master_clock clk_out1_clk_wiz_0 [get_pins CLK_4MHZ_reg/Q]
+create_generated_clock -name CLK_4MHZ_1 -source [get_pins clkgen1/inst/mmcm_adv_inst/CLKOUT0] -divide_by 2 -add -master_clock clk_out1_clk_wiz_0_1 [get_pins CLK_4MHZ_reg/Q]
+
+set_property LOC SLICE_X62Y11 [get_cells CLK_4MHZ_reg]
+set_property LOC SLICE_X62Y11 [get_cells CLK_4MHZ_i_1]
+
+set_property LOC SLICE_X65Y11 [get_cells CLK_2MHZ_reg]
+set_property LOC SLICE_X65Y10 [get_cells CONVST_reg]

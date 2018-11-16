@@ -20,13 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module FPGA_ADC_interface_tb( CS_tb, RD_tb, CONVST_tb, DONE_tb, VALID_tb, A_tb, DATA_tb, EOC_tb, CLK_2MHZ_tb, RESET_tb, DB_tb, ENABLE_tb
+module FPGA_ADC_interface_tb( CS_tb, RD_tb, CONVST_tb, DONE_tb, VALID_tb, A_tb, DATA_tb, EOC_tb, SYSCLK_tb, RESET_tb, DB_tb, ENABLE_tb
  );
  input CS_tb, RD_tb, CONVST_tb, DONE_tb, VALID_tb;
  input [2:0] A_tb;
  input [7:0] DATA_tb;
  
- output EOC_tb, CLK_2MHZ_tb, RESET_tb, ENABLE_tb;
+ output EOC_tb, SYSCLK_tb, RESET_tb, ENABLE_tb;
  output [7:0]DB_tb;
  
 //Inputs
@@ -34,7 +34,7 @@ wire CS_tb, RD_tb, CONVST_tb, DONE_ctb, VALID_tb;
 wire [2:0]A_tb;
 wire [7:0]DATA_tb;
 //Outputs
-reg  EOC_tb, CLK_2MHZ_tb, RESET_tb, ENABLE_tb;
+reg  EOC_tb, SYSCLK_tb, RESET_tb, ENABLE_tb;
 reg [7:0]DB_tb;
 
 reg [7:0]INTERNALDATA;
@@ -42,7 +42,7 @@ reg [7:0]INTERNALDATA;
 initial begin 
 EOC_tb = 1;
 DB_tb = 0;
-CLK_2MHZ_tb = 0;
+SYSCLK_tb = 0;
 RESET_tb = 1;
 ENABLE_tb = 1;
 INTERNALDATA = 0;
@@ -51,7 +51,7 @@ INTERNALDATA = 0;
 end
 
 always begin
-#500 CLK_2MHZ_tb = ~CLK_2MHZ_tb;
+#83 SYSCLK_tb = !SYSCLK_tb;
 end
 
 always @ (negedge CONVST_tb) begin
@@ -59,7 +59,7 @@ always @ (negedge CONVST_tb) begin
 end
 
 always @ (negedge RD_tb) begin
-    if (~CS_tb && ~EOC_tb && ~RD_tb)begin
+    if (!CS_tb && !EOC_tb && !RD_tb)begin
         #20 DB_tb = $random;
     end
 end
@@ -82,7 +82,7 @@ FPGA_ADC_interface DUT(
 .DONE(DONE_tb),
 .DATA(DATA_tb),
 .VALID(VALID_tb),
-.CLK_2MHZ(CLK_2MHZ_tb),
+.SYSCLK(SYSCLK_tb),
 .RESET(RESET_tb),
 .ENABLE(ENABLE_tb)
 );

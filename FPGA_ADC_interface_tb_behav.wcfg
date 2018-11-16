@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="4464839706fs"></ZoomEndTime>
-      <Cursor1Time time="240000000fs"></Cursor1Time>
+      <ZoomStartTime time="945000000fs"></ZoomStartTime>
+      <ZoomEndTime time="5250000001fs"></ZoomEndTime>
+      <Cursor1Time time="1890000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="98"></ValueColumnWidth>
+      <ValueColumnWidth column_width="90"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
+   <WVObjectSize size="14" />
    <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CONVST" type="logic">
       <obj_property name="ElementShortName">CONVST</obj_property>
       <obj_property name="ObjectShortName">CONVST</obj_property>
@@ -40,6 +40,10 @@
       <obj_property name="ElementShortName">DB[7:0]</obj_property>
       <obj_property name="ObjectShortName">DB[7:0]</obj_property>
    </wvobject>
+   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/DATA" type="array">
+      <obj_property name="ElementShortName">DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA[7:0]</obj_property>
+   </wvobject>
    <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/A" type="array">
       <obj_property name="ElementShortName">A[2:0]</obj_property>
       <obj_property name="ObjectShortName">A[2:0]</obj_property>
@@ -48,13 +52,13 @@
       <obj_property name="ElementShortName">DONE</obj_property>
       <obj_property name="ObjectShortName">DONE</obj_property>
    </wvobject>
-   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/DATA" type="array">
-      <obj_property name="ElementShortName">DATA[7:0]</obj_property>
-      <obj_property name="ObjectShortName">DATA[7:0]</obj_property>
-   </wvobject>
    <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/VALID" type="logic">
       <obj_property name="ElementShortName">VALID</obj_property>
       <obj_property name="ObjectShortName">VALID</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CLK_4MHZ" type="logic">
+      <obj_property name="ElementShortName">CLK_4MHZ</obj_property>
+      <obj_property name="ObjectShortName">CLK_4MHZ</obj_property>
    </wvobject>
    <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CLK_2MHZ" type="logic">
       <obj_property name="ElementShortName">CLK_2MHZ</obj_property>

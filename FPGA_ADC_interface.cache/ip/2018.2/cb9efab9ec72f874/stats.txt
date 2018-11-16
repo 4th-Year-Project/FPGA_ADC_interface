@@ -1,0 +1,4 @@
+NumberHits:0
+Timestamp: Fri Nov 16 10:22:41 UTC 2018
+VLNV: xilinx.com:ip:clk_wiz:6.0
+SynthRuntime: 66

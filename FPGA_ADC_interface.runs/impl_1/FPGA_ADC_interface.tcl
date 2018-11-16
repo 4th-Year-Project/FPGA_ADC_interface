@@ -60,14 +60,12 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param synth.incrementalSynthesisCache {C:/Users/Lawrence Carslake/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-2412-DESKTOP-5U412PN/incrSyn}
   create_project -in_memory -part xc7a35tcpg236-1
   set_property board_part digilentinc.com:cmod_a7-35t:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
@@ -76,7 +74,9 @@ set rc [catch {
   set_property parent.project_path C:/4th-year-project/FPGA_ADC_interface/FPGA_ADC_interface.xpr [current_project]
   set_property ip_output_repo C:/4th-year-project/FPGA_ADC_interface/FPGA_ADC_interface.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+  set_property XPM_LIBRARIES XPM_CDC [current_project]
   add_files -quiet C:/4th-year-project/FPGA_ADC_interface/FPGA_ADC_interface.runs/synth_1/FPGA_ADC_interface.dcp
+  read_ip -quiet C:/4th-year-project/FPGA_ADC_interface/FPGA_ADC_interface.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
   read_xdc C:/4th-year-project/FPGA_ADC_interface/FPGA_ADC_interface.srcs/constrs_1/imports/digilent-xdc/Cmod-A7-Master.xdc
   link_design -top FPGA_ADC_interface -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
@@ -150,6 +150,25 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
+  unset ACTIVE_STEP 
+}
+
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
+set rc [catch {
+  create_msg_db write_bitstream.pb
+  set_property XPM_LIBRARIES XPM_CDC [current_project]
+  catch { write_mem_info -force FPGA_ADC_interface.mmi }
+  write_bitstream -force FPGA_ADC_interface.bit 
+  catch {write_debug_probes -quiet -force FPGA_ADC_interface}
+  catch {file copy -force FPGA_ADC_interface.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
+} RESULT]
+if {$rc} {
+  step_failed write_bitstream
+  return -code error $RESULT
+} else {
+  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 
