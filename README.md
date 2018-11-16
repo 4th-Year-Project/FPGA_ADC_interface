@@ -4,9 +4,9 @@ interface to collect data from ADC and output in a format so can be stored in me
 # System Diagram
 ![](README_assets/ADC-FPGA_System_diagram.png)
 ![](README_assets/ADC-FPGA_ADC_pins.png)
-# State Diagram
+# State Diagram (out of date 16/11/18)
 ![](README_assets/ADC-DPFA_State_diagram.png)
-# Waveform
+# Waveform (out of date 16/11/18)
 ![](README_assets/FPGA-ADC_waveform.png)
 # Good to know
 - 3.3v IO Voltage
@@ -27,7 +27,27 @@ interface to collect data from ADC and output in a format so can be stored in me
 | DB7 to DB0 | Data Output Lines. They are normally held in a high impedance state. Data is driven onto the data bus when both R̅D̅ and C̅S̅ go active low. |
 
 # To-do
-* Pin planning
-* Psuedo code
-* Add delay of >20ns before reading data 
+* Change to final pinning
+* Add VIO to data bus
+
+# Final Connections
+![](README_assets/FPGA-ADC_connections.png)
+
+**Name**|**ADC pin**|**FPGA (ADC1)**|**FPGA(ADC2)**
+:-----:|:-----:|:-----:|:-----:
+A0|11|1|34
+A1|10|2|35
+A2|9|3|36
+EOC|8|4|37
+RD|6|5|38
+CS|5|6|39
+CONVST|4|7|40
+DB0|3|8|41
+DB1|2|9|42
+DB2|1|10|43
+DB3|28|11|44
+DB4|27|12|45
+DB5|26|13|46
+DB6|25|14|47
+DB7|24|17|48
 
