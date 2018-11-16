@@ -31,7 +31,7 @@ interface to collect data from ADC and output in a format so can be stored in me
 * Add VIO to data bus
 
 # Final Connections
-![](README_assets/FPGA-ADC_ADC_connections.png)
+![](README_assets/ADC-FPGA_ADC_connections.png)
 
 **Name**|**ADC pin**|**FPGA (ADC1)**|**FPGA(ADC2)**
 :-----:|:-----:|:-----:|:-----:
