@@ -2,3 +2,6 @@ Running: xsim.dir/FPGA_ADC_interface_tb_behav/xsimk.exe -simmode gui -wdb FPGA_A
 Design successfully loaded
 Design Loading Memory Usage: 5128 KB (Peak: 5128 KB)
 Design Loading CPU Usage: 62 ms
+Simulation completed
+Simulation Memory Usage: 6392 KB (Peak: 6392 KB)
+Simulation CPU Usage: 1015 ms

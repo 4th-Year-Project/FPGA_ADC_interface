@@ -99,20 +99,6 @@ always @ (negedge CLK_2MHZ or posedge RESET) begin  //Start sampling sequence
     end   
 end
 
-/*always @ (negedge EOC or negedge CLK_2MHZ)begin
-    if (RESET) begin
-        CONVST = 1;
-    end
-    else begin
-        if(DONE) begin
-            CONVST = 1;
-        end
-        else begin
-            CONVST = !CONVST;
-        end
-    end
-end */
-
 always @ (posedge CLK_4MHZ or posedge RESET)begin
     if (RESET) begin
     CONVST = 1;
