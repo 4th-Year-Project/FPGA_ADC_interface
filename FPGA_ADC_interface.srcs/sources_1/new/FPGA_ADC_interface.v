@@ -63,11 +63,28 @@ parameter MAXSAMPLES = 8'd200;
     
 assign RD = EOC; 
 assign CS = EOC;
+
+//------Debugging-------
+vio_0 vio_0 (
+      .clk(CLK_4MHZ),              // input wire clk
+      .probe_in0(DATA),  // input wire [7 : 0] probe_in0
+      .probe_in1(VALID),  // input wire [0 : 0] probe_in1
+      .probe_in2(DONE)  // input wire [0 : 0] probe_in2
+    );
+    
+ila_0 ila_0 (
+        .clk(CLK_4MHZ), // input wire clk
+        .probe0(DATA), // input wire [7:0]  probe0  
+        .probe1(VALID), // input wire [0:0]  probe1 
+        .probe2(DONE) // input wire [0:0]  probe2
+    );
+
 //------Clocking-------
 clk_wiz_0 clkgen1
    (
     .clk_out1(CLK_8MHZ),     // output clk_out1
     .clk_in1(SYSCLK));      // input clk_in1
+   
 
 always @ (posedge CLK_8MHZ) begin //Clocking
     if(RESET) 

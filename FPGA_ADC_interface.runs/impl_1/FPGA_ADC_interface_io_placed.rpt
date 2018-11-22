@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date                      : Fri Nov 16 16:53:55 2018
+| Date                      : Wed Nov 21 15:46:52 2018
 | Host                      : DESKTOP-5U412PN running 64-bit major release  (build 9200)
 | Command                   : report_io -file FPGA_ADC_interface_io_placed.rpt
 | Design                    : FPGA_ADC_interface
