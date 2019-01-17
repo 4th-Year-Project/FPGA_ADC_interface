@@ -28,7 +28,7 @@ module FPGA_ADC_interface(
      DONE,
      DATA,
      VALID,
-     //LAST,
+     LAST,
      SYSCLK,
      RESET,
      ENABLE
@@ -36,7 +36,7 @@ module FPGA_ADC_interface(
 
 output CONVST, CS , RD;
 output DONE, VALID;
-//output LAST;
+output LAST;
 output [2:0] A;
 output [7:0] DATA;
 
@@ -52,6 +52,7 @@ reg [2:0]A;
 reg DONE;
 reg [7:0] DATA;
 reg VALID;
+reg LAST;
 wire SYSCLK; 
 wire RESET;
 wire ENABLE;
@@ -90,12 +91,19 @@ always @ (negedge CLK_2MHZ or posedge RESET) begin  //Sanple number and address 
         COUNTER <= 0;
         A <= 0;
         DONE <= 0;
+        LAST <= 0;
     end 
     else begin    
         if (ENABLE && (COUNTER < MAXSAMPLES)) begin
             COUNTER <= COUNTER + 1;
             A <= A+1;
         end 
+        
+        if (COUNTER == MAXSAMPLES - 1)
+            LAST = 1;
+        else
+            LAST = 0;
+            
         if (COUNTER == MAXSAMPLES) 
             DONE <= 1;
     end   

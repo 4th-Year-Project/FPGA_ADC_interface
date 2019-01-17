@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1547767013">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1547767928">
   <File Type="BITSTR-BMM" Name="FPGA_ADC_interface_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="FPGA_ADC_interface_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="FPGA_ADC_interface_timing_summary_init.rpt"/>

@@ -20,9 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module FPGA_ADC_interface_tb( CS_tb, RD_tb, CONVST_tb, DONE_tb, VALID_tb, A_tb, DATA_tb, EOC_tb, SYSCLK_tb, RESET_tb, DB_tb, ENABLE_tb
+module FPGA_ADC_interface_tb( CS_tb, RD_tb, CONVST_tb, DONE_tb, VALID_tb, LAST_tb, A_tb, DATA_tb, EOC_tb, SYSCLK_tb, RESET_tb, DB_tb, ENABLE_tb
  );
- input CS_tb, RD_tb, CONVST_tb, DONE_tb, VALID_tb;
+ input CS_tb, RD_tb, CONVST_tb, DONE_tb, VALID_tb, LAST_tb;
  input [2:0] A_tb;
  input [7:0] DATA_tb;
  
@@ -30,7 +30,7 @@ module FPGA_ADC_interface_tb( CS_tb, RD_tb, CONVST_tb, DONE_tb, VALID_tb, A_tb, 
  output [7:0]DB_tb;
  
 //Inputs
-wire CS_tb, RD_tb, CONVST_tb, DONE_ctb, VALID_tb;
+wire CS_tb, RD_tb, CONVST_tb, DONE_ctb, VALID_tb, LAST_tb;
 wire [2:0]A_tb;
 wire [7:0]DATA_tb;
 //Outputs
@@ -80,6 +80,7 @@ FPGA_ADC_interface DUT(
 .RD(RD_tb),
 .A(A_tb),
 .DONE(DONE_tb),
+.LAST(LAST_tb),
 .DATA(DATA_tb),
 .VALID(VALID_tb),
 .SYSCLK(SYSCLK_tb),
