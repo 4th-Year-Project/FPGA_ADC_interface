@@ -1,4 +1,0 @@
-xpm_cdc.sv,systemverilog,xil_defaultlib,D:/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv,incdir="../../../../FPGA_ADC_interface.srcs/sources_1/ip/vio_0/hdl/verilog"incdir="../../../../FPGA_ADC_interface.srcs/sources_1/ip/vio_0/hdl"
-xpm_VCOMP.vhd,vhdl,xpm,D:/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_VCOMP.vhd,incdir="../../../../FPGA_ADC_interface.srcs/sources_1/ip/vio_0/hdl/verilog"incdir="../../../../FPGA_ADC_interface.srcs/sources_1/ip/vio_0/hdl"
-vio_0.v,verilog,xil_defaultlib,../../../../FPGA_ADC_interface.srcs/sources_1/ip/vio_0/sim/vio_0.v,incdir="../../../../FPGA_ADC_interface.srcs/sources_1/ip/vio_0/hdl/verilog"incdir="../../../../FPGA_ADC_interface.srcs/sources_1/ip/vio_0/hdl"
-glbl.v,Verilog,xil_defaultlib,glbl.v

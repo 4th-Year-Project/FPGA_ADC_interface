@@ -16,6 +16,7 @@ interface to collect data from ADC and output in a format so can be stored in me
   - A0 to A2 put next channel address on bus
   - E̅O̅C̅ pulses low to show conversion complete
 - [AD7829-1 Data sheet](https://www.analog.com/media/en/technical-documentation/data-sheets/AD7829-1.pdf)
+- AXI-Stream style interface
 
 | Pin | Description |
 | ------ | ------ |
@@ -27,9 +28,9 @@ interface to collect data from ADC and output in a format so can be stored in me
 | DB7 to DB0 | Data Output Lines. They are normally held in a high impedance state. Data is driven onto the data bus when both R̅D̅ and C̅S̅ go active low. |
 
 # To-do
-<<<<<<< HEAD
-* Change to final pinning
-* Add VIO to data bus
+* implement LAST
+* Check ENABLE
+* Package as IP 
 
 # Final Connections
 ![](README_assets/ADC-FPGA_ADC_connections.png)
@@ -51,9 +52,4 @@ DB4|27|12|45
 DB5|26|13|46
 DB6|25|14|47
 DB7|24|17|48
-=======
-* Pin planning
-* Psuedo code
-* Add delay of >20ns before reading data 
->>>>>>> parent of 1ce6d91... Readme Updates
 

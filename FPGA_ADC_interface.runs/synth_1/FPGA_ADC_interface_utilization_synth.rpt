@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Fri Nov 16 16:46:04 2018
+| Date         : Thu Jan 17 23:16:43 2019
 | Host         : DESKTOP-5U412PN running 64-bit major release  (build 9200)
 | Command      : report_utilization -file FPGA_ADC_interface_utilization_synth.rpt -pb FPGA_ADC_interface_utilization_synth.pb
 | Design       : FPGA_ADC_interface
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   15 |     0 |     20800 |  0.07 |
-|   LUT as Logic          |   15 |     0 |     20800 |  0.07 |
+| Slice LUTs*             |   16 |     0 |     20800 |  0.08 |
+|   LUT as Logic          |   16 |     0 |     20800 |  0.08 |
 |   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
-| Slice Registers         |   24 |     0 |     41600 |  0.06 |
-|   Register as Flip Flop |   24 |     0 |     41600 |  0.06 |
+| Slice Registers         |   33 |     0 |     41600 |  0.08 |
+|   Register as Flip Flop |   33 |     0 |     41600 |  0.08 |
 |   Register as Latch     |    0 |     0 |     41600 |  0.00 |
 | F7 Muxes                |    0 |     0 |     16300 |  0.00 |
 | F8 Muxes                |    0 |     0 |      8150 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 1     |          Yes |           - |          Set |
 | 21    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 2     |          Yes |       Reset |            - |
+| 11    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |    9 |     0 |       106 |  8.49 |
+| Bonded IOB                  |   27 |     0 |       106 | 25.47 |
 | Bonded IPADs                |    0 |     0 |        10 |  0.00 |
 | Bonded OPADs                |    0 |     0 |         4 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         5 |  0.00 |
@@ -115,7 +115,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    0 |     0 |        32 |  0.00 |
+| BUFGCTRL   |    1 |     0 |        32 |  3.13 |
 | BUFIO      |    0 |     0 |        20 |  0.00 |
 | MMCME2_ADV |    0 |     0 |         5 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |         5 |  0.00 |
@@ -150,17 +150,18 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDCE     |   21 |        Flop & Latch |
-| OBUF     |    6 |                  IO |
+| OBUF     |   16 |                  IO |
+| IBUF     |   11 |                  IO |
+| FDRE     |   11 |        Flop & Latch |
 | CARRY4   |    5 |          CarryLogic |
 | LUT6     |    4 |                 LUT |
 | LUT2     |    4 |                 LUT |
 | LUT5     |    3 |                 LUT |
 | LUT4     |    3 |                 LUT |
-| IBUF     |    3 |                  IO |
-| LUT1     |    2 |                 LUT |
-| FDRE     |    2 |        Flop & Latch |
+| LUT1     |    3 |                 LUT |
 | LUT3     |    1 |                 LUT |
 | FDPE     |    1 |        Flop & Latch |
+| BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
 

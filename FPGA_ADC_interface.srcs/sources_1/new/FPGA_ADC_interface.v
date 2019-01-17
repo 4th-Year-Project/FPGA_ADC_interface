@@ -25,18 +25,20 @@ module FPGA_ADC_interface(
      CS,
      RD,
      A,
-    // DONE,
-    // DATA,
-     //VALID,
+     DONE,
+     DATA,
+     VALID,
+     //LAST,
      SYSCLK,
      RESET,
      ENABLE
     );
 
 output CONVST, CS , RD;
-//output DONE, VALID;
+output DONE, VALID;
+//output LAST;
 output [2:0] A;
-//output [7:0] DATA;
+output [7:0] DATA;
 
 input EOC, SYSCLK, RESET, ENABLE;
 input [7:0]DB;
@@ -83,7 +85,7 @@ always @ (posedge CLK_4MHZ) begin //Clocking
         CLK_2MHZ <= !CLK_2MHZ;
 end
 //------Logic-------     
-always @ (negedge CLK_2MHZ or posedge RESET) begin  //Start sampling sequence
+always @ (negedge CLK_2MHZ or posedge RESET) begin  //Sanple number and address Counters
     if (RESET) begin
         COUNTER <= 0;
         A <= 0;
@@ -99,7 +101,7 @@ always @ (negedge CLK_2MHZ or posedge RESET) begin  //Start sampling sequence
     end   
 end
 
-always @ (posedge CLK_4MHZ or posedge RESET)begin
+always @ (posedge CLK_4MHZ or posedge RESET)begin //Conversion initator
     if (RESET) begin
     CONVST = 1;
     end

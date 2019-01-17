@@ -1,50 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1542387136">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1547767013">
+  <File Type="BITSTR-BMM" Name="FPGA_ADC_interface_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="FPGA_ADC_interface_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="FPGA_ADC_interface_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR" Name="FPGA_ADC_interface_power_routed.rpt"/>
   <File Type="PA-TCL" Name="FPGA_ADC_interface.tcl"/>
-  <File Type="BITSTR-BMM" Name="FPGA_ADC_interface_bd.bmm"/>
+  <File Type="OPT-TIMING" Name="FPGA_ADC_interface_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="FPGA_ADC_interface_opt.dcp"/>
   <File Type="ROUTE-PWR-SUM" Name="FPGA_ADC_interface_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="FPGA_ADC_interface_reports.tcl"/>
-  <File Type="OPT-DCP" Name="FPGA_ADC_interface_opt.dcp"/>
   <File Type="OPT-DRC" Name="FPGA_ADC_interface_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="FPGA_ADC_interface.hwdef"/>
   <File Type="PWROPT-DCP" Name="FPGA_ADC_interface_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="FPGA_ADC_interface_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="FPGA_ADC_interface_timing_summary_pwropted.rpt"/>
   <File Type="PLACE-DCP" Name="FPGA_ADC_interface_placed.dcp"/>
   <File Type="PLACE-IO" Name="FPGA_ADC_interface_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="FPGA_ADC_interface_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="FPGA_ADC_interface_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="FPGA_ADC_interface_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="FPGA_ADC_interface_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="FPGA_ADC_interface_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="FPGA_ADC_interface_incremental_reuse_pre_placed.rpt"/>
   <File Type="BG-BGN" Name="FPGA_ADC_interface.bgn"/>
+  <File Type="PLACE-TIMING" Name="FPGA_ADC_interface_timing_summary_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="FPGA_ADC_interface_postplace_pwropt.dcp"/>
   <File Type="BG-BIN" Name="FPGA_ADC_interface.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="FPGA_ADC_interface_timing_summary_postplace_pwropted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="FPGA_ADC_interface_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="FPGA_ADC_interface_drc_physopted.rpt"/>
   <File Type="BITSTR-MSK" Name="FPGA_ADC_interface.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="FPGA_ADC_interface_timing_summary_physopted.rpt"/>
   <File Type="ROUTE-ERROR-DCP" Name="FPGA_ADC_interface_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="FPGA_ADC_interface_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="FPGA_ADC_interface_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="FPGA_ADC_interface_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="FPGA_ADC_interface_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="FPGA_ADC_interface_drc_routed.rpx"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="FPGA_ADC_interface.ltx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="FPGA_ADC_interface_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="FPGA_ADC_interface_drc_routed.rpx"/>
   <File Type="BITSTR-MMI" Name="FPGA_ADC_interface.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="FPGA_ADC_interface_methodology_drc_routed.rpt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="FPGA_ADC_interface_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="FPGA_ADC_interface_methodology_drc_routed.pb"/>
   <File Type="BITSTR-SYSDEF" Name="FPGA_ADC_interface.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="FPGA_ADC_interface_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="FPGA_ADC_interface_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="FPGA_ADC_interface_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="FPGA_ADC_interface_route_status.pb"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="FPGA_ADC_interface_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="FPGA_ADC_interface_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="FPGA_ADC_interface_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="FPGA_ADC_interface_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="FPGA_ADC_interface_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="FPGA_ADC_interface_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="FPGA_ADC_interface_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="FPGA_ADC_interface_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="FPGA_ADC_interface_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="FPGA_ADC_interface_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="FPGA_ADC_interface_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="FPGA_ADC_interface_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="FPGA_ADC_interface_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="FPGA_ADC_interface_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="FPGA_ADC_interface_bus_skew_postroute_physopted.pb"/>
   <File Type="BG-BIT" Name="FPGA_ADC_interface.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="FPGA_ADC_interface_bus_skew_postroute_physopted.rpx"/>
   <File Type="BITSTR-RBT" Name="FPGA_ADC_interface.rbt"/>
   <File Type="BITSTR-NKY" Name="FPGA_ADC_interface.nky"/>
   <File Type="BG-DRC" Name="FPGA_ADC_interface.drc"/>
