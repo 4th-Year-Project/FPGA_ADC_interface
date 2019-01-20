@@ -28,19 +28,21 @@ module FPGA_ADC_interface(
      DONE,
      DATA,
      VALID,
+     READY,
      LAST,
      SYSCLK,
      RESET,
-     ENABLE
+     ENABLE,
+     CLK_2MHZ
     );
 
 output CONVST, CS , RD;
 output DONE, VALID;
-output LAST;
+output LAST, CLK_2MHZ;
 output [2:0] A;
 output [7:0] DATA;
 
-input EOC, SYSCLK, RESET, ENABLE;
+input EOC, SYSCLK, RESET, ENABLE, READY;
 input [7:0]DB;
 
 reg CONVST;
@@ -56,11 +58,13 @@ reg LAST;
 wire SYSCLK; 
 wire RESET;
 wire ENABLE;
+wire READY;
 
 reg [16:0]COUNTER;
 reg CLK_2MHZ = 0;
 reg CLK_4MHZ = 0;
 wire CLK_8MHZ;
+wire LOCKED;
 parameter MAXSAMPLES = 8'd200; 
 
     
@@ -70,6 +74,7 @@ assign CS = EOC;
 clk_wiz_0 clkgen1
    (
     .clk_out1(CLK_8MHZ),     // output clk_out1
+    .locked(LOCKED),  
     .clk_in1(SYSCLK));      // input clk_in1
 
 always @ (posedge CLK_8MHZ) begin //Clocking
@@ -94,7 +99,7 @@ always @ (negedge CLK_2MHZ or posedge RESET) begin  //Sanple number and address 
         LAST <= 0;
     end 
     else begin    
-        if (ENABLE && (COUNTER < MAXSAMPLES)) begin
+        if (LOCKED && READY && ENABLE && (COUNTER < MAXSAMPLES)) begin
             COUNTER <= COUNTER + 1;
             A <= A+1;
         end 
@@ -110,7 +115,7 @@ always @ (negedge CLK_2MHZ or posedge RESET) begin  //Sanple number and address 
 end
 
 always @ (posedge CLK_4MHZ or posedge RESET)begin //Conversion initator
-    if (RESET) begin
+    if (RESET || !LOCKED || !ENABLE || !READY ) begin
     CONVST = 1;
     end
     else begin

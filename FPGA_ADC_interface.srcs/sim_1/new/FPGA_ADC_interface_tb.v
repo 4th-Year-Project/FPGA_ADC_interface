@@ -20,21 +20,21 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module FPGA_ADC_interface_tb( CS_tb, RD_tb, CONVST_tb, DONE_tb, VALID_tb, LAST_tb, A_tb, DATA_tb, EOC_tb, SYSCLK_tb, RESET_tb, DB_tb, ENABLE_tb
+module FPGA_ADC_interface_tb( CLK_2MHZ_tb, CS_tb, RD_tb, CONVST_tb, DONE_tb, VALID_tb, LAST_tb, A_tb, DATA_tb, EOC_tb, SYSCLK_tb, RESET_tb, DB_tb, ENABLE_tb, READY_tb
  );
- input CS_tb, RD_tb, CONVST_tb, DONE_tb, VALID_tb, LAST_tb;
+ input CS_tb, RD_tb, CONVST_tb, DONE_tb, VALID_tb, LAST_tb, CLK_2MHZ_tb;
  input [2:0] A_tb;
  input [7:0] DATA_tb;
  
- output EOC_tb, SYSCLK_tb, RESET_tb, ENABLE_tb;
+ output EOC_tb, SYSCLK_tb, RESET_tb, ENABLE_tb, READY_tb;
  output [7:0]DB_tb;
  
 //Inputs
-wire CS_tb, RD_tb, CONVST_tb, DONE_ctb, VALID_tb, LAST_tb;
+wire CS_tb, RD_tb, CONVST_tb, DONE_ctb, VALID_tb, LAST_tb, CLK_2MHZ_tb ;
 wire [2:0]A_tb;
 wire [7:0]DATA_tb;
 //Outputs
-reg  EOC_tb, SYSCLK_tb, RESET_tb, ENABLE_tb;
+reg  EOC_tb, SYSCLK_tb, RESET_tb, ENABLE_tb, READY_tb;
 reg [7:0]DB_tb;
 
 reg [7:0]INTERNALDATA;
@@ -46,6 +46,7 @@ SYSCLK_tb = 0;
 RESET_tb = 1;
 ENABLE_tb = 1;
 INTERNALDATA = 0;
+READY_tb = 1;
 
 #10 RESET_tb =0;
 end
@@ -85,7 +86,9 @@ FPGA_ADC_interface DUT(
 .VALID(VALID_tb),
 .SYSCLK(SYSCLK_tb),
 .RESET(RESET_tb),
-.ENABLE(ENABLE_tb)
+.ENABLE(ENABLE_tb),
+.READY(READY_tb),
+.CLK_2MHZ(CLK_2MHZ_tb)
 );
 
 endmodule

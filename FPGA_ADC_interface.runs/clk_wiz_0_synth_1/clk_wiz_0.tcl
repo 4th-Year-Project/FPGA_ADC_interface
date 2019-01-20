@@ -31,12 +31,17 @@ set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:cmod_a7-35t:part0:1.1 [current_project]
+set_property ip_repo_paths {
+  c:/4th-year-project/fpga_adc_interface
+  {c:/Users/Lawrence Carslake/AppData/Roaming/Xilinx/ip_repo}
+} [current_project]
 set_property ip_output_repo c:/4th-year-project/FPGA_ADC_interface/FPGA_ADC_interface.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_ip -quiet C:/4th-year-project/FPGA_ADC_interface/FPGA_ADC_interface.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 set_property used_in_implementation false [get_files -all c:/4th-year-project/FPGA_ADC_interface/FPGA_ADC_interface.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/4th-year-project/FPGA_ADC_interface/FPGA_ADC_interface.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all c:/4th-year-project/FPGA_ADC_interface/FPGA_ADC_interface.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/4th-year-project/FPGA_ADC_interface/FPGA_ADC_interface.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_late.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

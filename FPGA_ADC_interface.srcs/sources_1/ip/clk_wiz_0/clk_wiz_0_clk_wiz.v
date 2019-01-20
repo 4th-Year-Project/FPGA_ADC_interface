@@ -70,6 +70,8 @@ module clk_wiz_0_clk_wiz
  (// Clock in ports
   // Clock out ports
   output        clk_out1,
+  // Status and control signals
+  output        locked,
   input         clk_in1
  );
   // Input buffering
@@ -117,6 +119,9 @@ wire clk_in2_clk_wiz_0;
   wire        clkout6_unused;
   wire        clkfbstopped_unused;
   wire        clkinstopped_unused;
+  (* KEEP = "TRUE" *) 
+  (* ASYNC_REG = "TRUE" *)
+  reg  [7 :0] seq_reg1 = 0;
 
   MMCME2_ADV
   #(.BANDWIDTH            ("OPTIMIZED"),
@@ -174,6 +179,7 @@ wire clk_in2_clk_wiz_0;
     .PWRDWN              (1'b0),
     .RST                 (1'b0));
 
+  assign locked = locked_int;
 // Clock Monitor clock assigning
 //--------------------------------------
  // Output buffering
@@ -188,9 +194,18 @@ wire clk_in2_clk_wiz_0;
 
 
 
-  BUFG clkout1_buf
+
+  BUFGCE clkout1_buf
    (.O   (clk_out1),
+    .CE  (seq_reg1[7]),
     .I   (clk_out1_clk_wiz_0));
+
+  BUFH clkout1_buf_en
+   (.O   (clk_out1_clk_wiz_0_en_clk),
+    .I   (clk_out1_clk_wiz_0));
+  always @(posedge clk_out1_clk_wiz_0_en_clk)
+        seq_reg1 <= {seq_reg1[6:0],locked_int};
+
 
 
 

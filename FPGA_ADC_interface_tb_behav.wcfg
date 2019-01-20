@@ -11,74 +11,105 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="4591646117fs"></ZoomEndTime>
-      <Cursor1Time time="74316000fs"></Cursor1Time>
+      <ZoomStartTime time="19549815734fs"></ZoomStartTime>
+      <ZoomEndTime time="44090036854fs"></ZoomEndTime>
+      <Cursor1Time time="36406884000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="86"></ValueColumnWidth>
+      <ValueColumnWidth column_width="74"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="15" />
-   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CONVST" type="logic">
-      <obj_property name="ElementShortName">CONVST</obj_property>
-      <obj_property name="ObjectShortName">CONVST</obj_property>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="group53" type="group">
+      <obj_property name="label">ADC Interface</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CONVST" type="logic">
+         <obj_property name="ElementShortName">CONVST</obj_property>
+         <obj_property name="ObjectShortName">CONVST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/EOC" type="logic">
+         <obj_property name="ElementShortName">EOC</obj_property>
+         <obj_property name="ObjectShortName">EOC</obj_property>
+      </wvobject>
+      <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CS" type="logic">
+         <obj_property name="ElementShortName">CS</obj_property>
+         <obj_property name="ObjectShortName">CS</obj_property>
+      </wvobject>
+      <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/RD" type="logic">
+         <obj_property name="ElementShortName">RD</obj_property>
+         <obj_property name="ObjectShortName">RD</obj_property>
+      </wvobject>
+      <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/DB" type="array">
+         <obj_property name="ElementShortName">DB[7:0]</obj_property>
+         <obj_property name="ObjectShortName">DB[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/A" type="array">
+         <obj_property name="ElementShortName">A[2:0]</obj_property>
+         <obj_property name="ObjectShortName">A[2:0]</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/EOC" type="logic">
-      <obj_property name="ElementShortName">EOC</obj_property>
-      <obj_property name="ObjectShortName">EOC</obj_property>
+   <wvobject fp_name="group54" type="group">
+      <obj_property name="label">AXIS Master</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/DATA" type="array">
+         <obj_property name="ElementShortName">DATA[7:0]</obj_property>
+         <obj_property name="ObjectShortName">DATA[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/VALID" type="logic">
+         <obj_property name="ElementShortName">VALID</obj_property>
+         <obj_property name="ObjectShortName">VALID</obj_property>
+      </wvobject>
+      <wvobject fp_name="/FPGA_ADC_interface_tb/READY_tb" type="logic">
+         <obj_property name="ElementShortName">READY_tb</obj_property>
+         <obj_property name="ObjectShortName">READY_tb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/FPGA_ADC_interface_tb/LAST_tb" type="logic">
+         <obj_property name="ElementShortName">LAST_tb</obj_property>
+         <obj_property name="ObjectShortName">LAST_tb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CLK_2MHZ" type="logic">
+         <obj_property name="ElementShortName">CLK_2MHZ</obj_property>
+         <obj_property name="ObjectShortName">CLK_2MHZ</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CS" type="logic">
-      <obj_property name="ElementShortName">CS</obj_property>
-      <obj_property name="ObjectShortName">CS</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/RD" type="logic">
-      <obj_property name="ElementShortName">RD</obj_property>
-      <obj_property name="ObjectShortName">RD</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/DB" type="array">
-      <obj_property name="ElementShortName">DB[7:0]</obj_property>
-      <obj_property name="ObjectShortName">DB[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/DATA" type="array">
-      <obj_property name="ElementShortName">DATA[7:0]</obj_property>
-      <obj_property name="ObjectShortName">DATA[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/A" type="array">
-      <obj_property name="ElementShortName">A[2:0]</obj_property>
-      <obj_property name="ObjectShortName">A[2:0]</obj_property>
+   <wvobject fp_name="group55" type="group">
+      <obj_property name="label">Clocking</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/clkgen1/inst/clk_out1" type="logic">
+         <obj_property name="ElementShortName">clk_out1</obj_property>
+         <obj_property name="ObjectShortName">clk_out1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CLK_2MHZ" type="logic">
+         <obj_property name="ElementShortName">CLK_2MHZ</obj_property>
+         <obj_property name="ObjectShortName">CLK_2MHZ</obj_property>
+      </wvobject>
+      <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CLK_4MHZ" type="logic">
+         <obj_property name="ElementShortName">CLK_4MHZ</obj_property>
+         <obj_property name="ObjectShortName">CLK_4MHZ</obj_property>
+      </wvobject>
+      <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/clkgen1/locked" type="logic">
+         <obj_property name="ElementShortName">locked</obj_property>
+         <obj_property name="ObjectShortName">locked</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/DONE" type="logic">
       <obj_property name="ElementShortName">DONE</obj_property>
       <obj_property name="ObjectShortName">DONE</obj_property>
    </wvobject>
-   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/VALID" type="logic">
-      <obj_property name="ElementShortName">VALID</obj_property>
-      <obj_property name="ObjectShortName">VALID</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CLK_4MHZ" type="logic">
-      <obj_property name="ElementShortName">CLK_4MHZ</obj_property>
-      <obj_property name="ObjectShortName">CLK_4MHZ</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CLK_2MHZ" type="logic">
-      <obj_property name="ElementShortName">CLK_2MHZ</obj_property>
-      <obj_property name="ObjectShortName">CLK_2MHZ</obj_property>
-   </wvobject>
    <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/RESET" type="logic">
       <obj_property name="ElementShortName">RESET</obj_property>
       <obj_property name="ObjectShortName">RESET</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/COUNTER" type="array">
-      <obj_property name="ElementShortName">COUNTER[16:0]</obj_property>
-      <obj_property name="ObjectShortName">COUNTER[16:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/ENABLE" type="logic">
       <obj_property name="ElementShortName">ENABLE</obj_property>
       <obj_property name="ObjectShortName">ENABLE</obj_property>
    </wvobject>
-   <wvobject fp_name="/FPGA_ADC_interface_tb/LAST_tb" type="logic">
-      <obj_property name="ElementShortName">LAST_tb</obj_property>
-      <obj_property name="ObjectShortName">LAST_tb</obj_property>
+   <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/COUNTER" type="array">
+      <obj_property name="ElementShortName">COUNTER[16:0]</obj_property>
+      <obj_property name="ObjectShortName">COUNTER[16:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

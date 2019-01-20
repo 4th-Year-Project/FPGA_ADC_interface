@@ -10,6 +10,8 @@ Time Resolution for simulation is 1ps
 Compiling module unisims_ver.IBUF
 Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=64.0,...
 Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.BUFGCE_default
+Compiling module unisims_ver.BUFH
 Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
 Compiling module xil_defaultlib.clk_wiz_0
 Compiling module xil_defaultlib.FPGA_ADC_interface
