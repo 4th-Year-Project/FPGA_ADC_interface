@@ -30,20 +30,20 @@ module FPGA_ADC_interface(
      VALID,
      READY,
      LAST,
-     SYSCLK,
-     RESET,
-     ENABLE,
      CLK_2MHZ,
-     RESET_OUT
+     RESET_OUT,
+     CLK_8MHZ,
+     RESET, 
+     ENABLE
     );
 
-output CONVST, CS , RD;
-output DONE, VALID;
-output LAST, CLK_2MHZ, RESET_OUT;
+output CONVST, CS , RD; 
+output LAST, CLK_2MHZ, RESET_OUT, VALID, DONE;
 output [2:0] A;
 output [7:0] DATA;
 
-input EOC, SYSCLK, RESET, ENABLE, READY;
+input EOC, CLK_8MHZ, RESET, ENABLE;
+input READY;
 input [7:0]DB;
 
 reg CONVST;
@@ -56,7 +56,7 @@ reg DONE;
 reg [7:0] DATA;
 reg VALID;
 reg LAST;
-wire SYSCLK; 
+wire CLK_8MHZ; 
 wire RESET;
 wire ENABLE;
 wire READY;
@@ -64,28 +64,19 @@ reg RESET_OUT;
 
 reg [16:0]COUNTER;
 reg CLK_2MHZ = 0;
-reg CLK_4MHZ = 0;
-wire CLK_8MHZ;
-wire LOCKED;
+reg CLK_4MHZ = 0; 
 parameter integer MAXSAMPLES = 200; 
 
 assign RESET = RESET_OUT;    
 assign RD = EOC; 
 assign CS = EOC;
 //------Clocking-------
-clk_wiz_0 clkgen1
-   (
-    .clk_out1(CLK_8MHZ),     // output clk_out1
-    .locked(LOCKED),  
-    .clk_in1(SYSCLK));      // input clk_in1
-
 always @ (posedge CLK_8MHZ) begin //Clocking
     if(RESET) 
         CLK_4MHZ <= 1'b0;
     else
         CLK_4MHZ <= !CLK_4MHZ;
 end
-
 always @ (posedge CLK_4MHZ) begin //Clocking
     if(RESET) 
         CLK_2MHZ <= 1'b0;
@@ -101,9 +92,9 @@ always @ (negedge CLK_2MHZ or posedge RESET) begin  //Sanple number and address 
         LAST <= 0;
     end 
     else begin    
-        if (LOCKED && READY && ENABLE && (COUNTER < MAXSAMPLES)) begin
+        if (ENABLE && (COUNTER < MAXSAMPLES)) begin
             COUNTER <= COUNTER + 1;
-            A <= A+1;
+            A <= A+2;
         end 
         
         if (COUNTER == MAXSAMPLES - 1)
@@ -117,7 +108,7 @@ always @ (negedge CLK_2MHZ or posedge RESET) begin  //Sanple number and address 
 end
 
 always @ (posedge CLK_4MHZ or posedge RESET)begin //Conversion initator
-    if (RESET || !LOCKED || !ENABLE || !READY ) begin
+    if (RESET || !ENABLE ) begin
     CONVST = 1;
     end
     else begin

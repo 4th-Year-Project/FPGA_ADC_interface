@@ -1,5 +1,5 @@
-﻿# FPGA_ADC_interface
-interface to collect data from ADC and output in a format so can be stored in memory
+﻿  # FPGA_ADC_interface
+interface to collect data from ADC and output in as axi-stream so it can be stored in memory
 
 # System Diagram
 ![](README_assets/ADC-FPGA_System_diagram.png)
@@ -16,7 +16,10 @@ interface to collect data from ADC and output in a format so can be stored in me
   - A0 to A2 put next channel address on bus
   - E̅O̅C̅ pulses low to show conversion complete
 - [AD7829-1 Data sheet](https://www.analog.com/media/en/technical-documentation/data-sheets/AD7829-1.pdf)
-- AXI-Stream style interface
+- AXI-Stream style interface runs at 2MHz with one byte wide data
+- currently only reads even numbered channels (A increments by two each cycle)
+- requires 8MHz clock input and active high reset 
+- the number of samples is configurable in ip settings 
 
 | Pin | Description |
 | ------ | ------ |
@@ -28,9 +31,9 @@ interface to collect data from ADC and output in a format so can be stored in me
 | DB7 to DB0 | Data Output Lines. They are normally held in a high impedance state. Data is driven onto the data bus when both R̅D̅ and C̅S̅ go active low. |
 
 # To-do
-* implement LAST
-* Check ENABLE
-* Package as IP 
+* reimplement LAST
+* make choiche of channels reconfigurable
+* check axi stream standard 
 
 # Final Connections
 ![](README_assets/ADC-FPGA_ADC_connections.png)

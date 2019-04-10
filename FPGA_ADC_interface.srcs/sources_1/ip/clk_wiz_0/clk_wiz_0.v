@@ -1,4 +1,5 @@
 
+// file: clk_wiz_0.v
 // 
 // (c) Copyright 2008 - 2013 Xilinx, Inc. All rights reserved.
 // 
@@ -62,18 +63,28 @@
 //----------------------------------------------------------------------------
 // __primary__________12.000____________0.010
 
-// The following must be inserted into your Verilog file for this
-// core to be instantiated. Change the instance name and port connections
-// (in parentheses) to your own signal names.
+`timescale 1ps/1ps
 
-//----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
+(* CORE_GENERATION_INFO = "clk_wiz_0,clk_wiz_v6_0_2_0_0,{component_name=clk_wiz_0,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=1,clkin1_period=83.333,clkin2_period=10.0,use_power_down=false,use_reset=false,use_locked=true,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
 
-  clk_wiz_0 instance_name
-   (
-    // Clock out ports
-    .clk_out1(clk_out1),     // output clk_out1
-    // Status and control signals
-    .locked(locked),       // output locked
-   // Clock in ports
-    .clk_in1(clk_in1));      // input clk_in1
-// INST_TAG_END ------ End INSTANTIATION Template ---------
+module clk_wiz_0 
+ (
+  // Clock out ports
+  output        clk_out1,
+  // Status and control signals
+  output        locked,
+ // Clock in ports
+  input         clk_in1
+ );
+
+  clk_wiz_0_clk_wiz inst
+  (
+  // Clock out ports  
+  .clk_out1(clk_out1),
+  // Status and control signals               
+  .locked(locked),
+ // Clock in ports
+  .clk_in1(clk_in1)
+  );
+
+endmodule

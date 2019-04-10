@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="19549815734fs"></ZoomStartTime>
-      <ZoomEndTime time="44090036854fs"></ZoomEndTime>
-      <Cursor1Time time="36406884000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="42200000000000001fs"></ZoomEndTime>
+      <Cursor1Time time="611000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="74"></ValueColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="7" />
+   <WVObjectSize size="8" />
    <wvobject fp_name="group53" type="group">
       <obj_property name="label">ADC Interface</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -78,10 +78,6 @@
       <obj_property name="label">Clocking</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/clkgen1/inst/clk_out1" type="logic">
-         <obj_property name="ElementShortName">clk_out1</obj_property>
-         <obj_property name="ObjectShortName">clk_out1</obj_property>
-      </wvobject>
       <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CLK_2MHZ" type="logic">
          <obj_property name="ElementShortName">CLK_2MHZ</obj_property>
          <obj_property name="ObjectShortName">CLK_2MHZ</obj_property>
@@ -89,10 +85,6 @@
       <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/CLK_4MHZ" type="logic">
          <obj_property name="ElementShortName">CLK_4MHZ</obj_property>
          <obj_property name="ObjectShortName">CLK_4MHZ</obj_property>
-      </wvobject>
-      <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/clkgen1/locked" type="logic">
-         <obj_property name="ElementShortName">locked</obj_property>
-         <obj_property name="ObjectShortName">locked</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="/FPGA_ADC_interface_tb/DUT/DONE" type="logic">
@@ -111,5 +103,9 @@
       <obj_property name="ElementShortName">COUNTER[16:0]</obj_property>
       <obj_property name="ObjectShortName">COUNTER[16:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FPGA_ADC_interface_tb/CLK_4MH_tb" type="logic">
+      <obj_property name="ElementShortName">CLK_4MH_tb</obj_property>
+      <obj_property name="ObjectShortName">CLK_4MH_tb</obj_property>
    </wvobject>
 </wave_config>
