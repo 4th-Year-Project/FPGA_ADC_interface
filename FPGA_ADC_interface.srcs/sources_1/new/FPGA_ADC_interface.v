@@ -33,12 +33,13 @@ module FPGA_ADC_interface(
      SYSCLK,
      RESET,
      ENABLE,
-     CLK_2MHZ
+     CLK_2MHZ,
+     RESET_OUT
     );
 
 output CONVST, CS , RD;
 output DONE, VALID;
-output LAST, CLK_2MHZ;
+output LAST, CLK_2MHZ, RESET_OUT;
 output [2:0] A;
 output [7:0] DATA;
 
@@ -59,15 +60,16 @@ wire SYSCLK;
 wire RESET;
 wire ENABLE;
 wire READY;
+reg RESET_OUT;
 
 reg [16:0]COUNTER;
 reg CLK_2MHZ = 0;
 reg CLK_4MHZ = 0;
 wire CLK_8MHZ;
 wire LOCKED;
-parameter MAXSAMPLES = 8'd200; 
+parameter integer MAXSAMPLES = 200; 
 
-    
+assign RESET = RESET_OUT;    
 assign RD = EOC; 
 assign CS = EOC;
 //------Clocking-------

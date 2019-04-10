@@ -21,6 +21,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/FPGA_ADC_Interface_0.3"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../fpga_adc_interface"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../Users/Lawrence Carslake/AppData/Roaming/Xilinx/ip_repo"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
