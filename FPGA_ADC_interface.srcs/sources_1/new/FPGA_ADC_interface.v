@@ -31,14 +31,14 @@ module FPGA_ADC_interface(
      READY,
      LAST,
      CLK_2MHZ,
-     RESET_OUT,
+     RESET_OUT_INV,
      CLK_8MHZ,
      RESET, 
      ENABLE
     );
 
 output CONVST, CS , RD; 
-output LAST, CLK_2MHZ, RESET_OUT, VALID, DONE;
+output LAST, CLK_2MHZ, RESET_OUT_INV, VALID, DONE;
 output [2:0] A;
 output [7:0] DATA;
 
@@ -60,14 +60,14 @@ wire CLK_8MHZ;
 wire RESET;
 wire ENABLE;
 wire READY;
-reg RESET_OUT;
+wire RESET_OUT_INV;
 
 reg [16:0]COUNTER;
 reg CLK_2MHZ = 0;
 reg CLK_4MHZ = 0; 
 parameter integer MAXSAMPLES = 200; 
 
-assign RESET = RESET_OUT;    
+assign RESET_OUT_INV = ~RESET;    
 assign RD = EOC; 
 assign CS = EOC;
 //------Clocking-------

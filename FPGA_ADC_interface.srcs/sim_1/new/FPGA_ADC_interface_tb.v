@@ -30,7 +30,7 @@ module FPGA_ADC_interface_tb( CLK_2MHZ_tb, CS_tb, RD_tb, CONVST_tb, DONE_tb, VAL
  output [7:0]DB_tb;
  
 //Inputs
-wire CS_tb, RD_tb, CONVST_tb, DONE_ctb, VALID_tb, LAST_tb, CLK_2MHZ_tb ;
+wire CS_tb, RD_tb, CONVST_tb, DONE_ctb, VALID_tb, LAST_tb, CLK_2MHZ_tb, RESET_OUT_tb ;
 wire [2:0]A_tb;
 wire [7:0]DATA_tb;
 //Outputs
@@ -89,7 +89,7 @@ FPGA_ADC_interface DUT(
 .ENABLE(ENABLE_tb),
 .READY(READY_tb),
 .CLK_2MHZ(CLK_2MHZ_tb),
-.RESET_OUT(RESET_OUT_tb)
+.RESET_OUT_INV(RESET_OUT_tb)
 );
 
 endmodule
