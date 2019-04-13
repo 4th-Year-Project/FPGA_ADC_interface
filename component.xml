@@ -3,7 +3,7 @@
   <spirit:vendor>Carslake.me</spirit:vendor>
   <spirit:library>user</spirit:library>
   <spirit:name>FPGA_ADC_interface</spirit:name>
-  <spirit:version>1.8</spirit:version>
+  <spirit:version>1.11</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
       <spirit:name>RESET</spirit:name>
@@ -534,14 +534,14 @@
     <spirit:fileSet>
       <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>xgui/FPGA_ADC_interface_v1_8.tcl</spirit:name>
+        <spirit:name>xgui/FPGA_ADC_interface_v1_11.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_10bdce6a</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>
-  <spirit:description>FPGA_ADC_interface_v1_0</spirit:description>
+  <spirit:description>FPGA_ADC_interface</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
@@ -570,13 +570,13 @@
       <xilinx:taxonomies>
         <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
       </xilinx:taxonomies>
-      <xilinx:displayName>FPGA_ADC_interface_v1_0</xilinx:displayName>
+      <xilinx:displayName>FPGA_ADC_interface</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:xpmLibraries>
         <xilinx:xpmLibrary>XPM_CDC</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>15</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-04-10T20:51:22Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>19</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2019-04-13T09:18:46Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:FPGA_ADC_interface:1.0_ARCHIVE_LOCATION">c:/4th-year-project/fpga_adc_interface</xilinx:tag>
         <xilinx:tag xilinx:name="Lawrence Carslake:user:FPGA_ADC_interface:1.0_ARCHIVE_LOCATION">c:/4th-year-project/fpga_adc_interface</xilinx:tag>
@@ -790,6 +790,50 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1749f95b_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@59a21905_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@34a4e45c_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34aac363_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@260af172_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@780b29a2_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34ac8136_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e9b71db_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45e4a1ae_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1892c4c3_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a411c6c_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b3c9ae4_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b5326d8_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19b8d40c_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2beb785_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61acb21c_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@542bc844_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41a84e7_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57241150_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72a992c7_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1860fdfd_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4adc1636_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66862255_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@174e1989_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30f3ede_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1aefdce2_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31a61de9_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14d95bd_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48c46f56_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62b015a6_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d17ed2d_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ccdd4e3_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41d99bf3_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5373eb70_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@689e0a67_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f911093_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11ea7659_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@487cd759_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47013c80_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@911c752_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9d57ca4_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@790f85e9_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@515f040a_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38ac3889_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@500a5c6e_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ff67549_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@bf87f59_ARCHIVE_LOCATION">c:/FPGA_Projects/fpga_adc_interface</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
